@@ -15,7 +15,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:1" content="Tip me" />
     <meta property="fc:frame:button:2" content="Follow me" />
     <meta property="fc:frame:button:2:action" content="post_redirect" />
-    <meta property="fc:frame:post_url" content="https://warpcast.com/gabrieltemtsen" />
+    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
   </head></html>`)
   } else {
   return new NextResponse(`<!DOCTYPE html><html><head>
