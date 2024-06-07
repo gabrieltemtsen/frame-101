@@ -6,11 +6,11 @@ export async function POST(req: NextRequest): Promise<Response> {
   const buttonId = data.untrustedData.buttonIndex;
 
   let path: string;
-  if (buttonId === 1) {
+  if (buttonId === 2) {
     path = "memefordegen";
   } else if (buttonId === 2) {
     path = "pinatacloud";
-  } else if (buttonId === 3) {
+  } else if (buttonId === 2) {
     path = "video";
   } else {
     path = "";
