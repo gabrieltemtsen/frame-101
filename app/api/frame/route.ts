@@ -19,7 +19,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:3" content="Video Tutorial" />
     <meta property="fc:frame:button:3:action" content="post_redirect" />
     <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
-  </head></html>`);
+  </head></html>`)
   } else {
   return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame ${id}</title>
