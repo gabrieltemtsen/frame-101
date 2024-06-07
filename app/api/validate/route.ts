@@ -12,7 +12,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   // Create headers and set Location for redirect
   const headers = new Headers();
-  headers.set("Location", `${process.env.NEXT_PUBLIC_BASE_URL}/new-frame-path`); // Replace with actual path
+  headers.set("Location", `${process.env.NEXT_PUBLIC_BASE_URL}/api/validate`); // Replace with actual path
   headers.set("Content-Type", "application/json");
 
   // Return response with 302 status code
