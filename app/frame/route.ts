@@ -32,7 +32,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       const frameMetadata = await fdk.getFrameMetadata({
         post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/redirect`,
         buttons: [
-          { label: "Thankyou Champ!", action: "post_redirect" },
+          { label: "Thankyou Champ! Tip now😜", action: "post_redirect" },
         ],
         aspect_ratio: "1:1",
         cid: "QmPGVGuJBWfbFSggnGEx6pehsGqXwxGYxxGkTTSwDxncJc",
