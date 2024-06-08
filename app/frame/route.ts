@@ -10,7 +10,7 @@ const fdk = new PinataFDK({
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const frameMetadata = await fdk.getFrameMetadata({
-      post_url: `${process.env.BASE_URL}/frame`,
+      post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/frame`,
       buttons: [{ label: "Make Me Smile", action: "post" }],
       aspect_ratio: "1:1",
       cid: "QmV1JEbHELKkyve1Cn5yAxUdkwWENnRuNr1gAJ2oGqaP5g",
