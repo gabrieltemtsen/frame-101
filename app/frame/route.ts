@@ -29,7 +29,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       const { isValid, message } = await fdk.validateFrameMessage(body);
   
       const frameMetadata = await fdk.getFrameMetadata({
-        post_url: `${process.env.BASE_URL}/redirect`,
+        post_url: `${process.env.PUBLIC_BASE_URL}/redirect`,
         buttons: [
           { label: "Thankyou Champ!", action: "post_redirect" },
         ],
