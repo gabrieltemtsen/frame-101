@@ -42,7 +42,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     //     await fdk.sendAnalytics("frame-mint-tutorial-mint", body);
     //   }
   
-      return NextResponse.json({ success: true, frameMetadata: frameMetadata });
+      return NextResponse.json({ success: true });
     } catch (error: any) {
       console.error(error);
       return NextResponse.json({ success: false, error: error.message });
