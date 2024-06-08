@@ -23,12 +23,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
-  const body = await req.json();
-  const fid = body.untrustedData.fid;
-
-  const { isValid, message } = await fdk.validateFrameMessage(body);
     try {
-    
+      const body = await req.json();
+      const fid = body.untrustedData.fid;
+  
+      const { isValid, message } = await fdk.validateFrameMessage(body);
+  
       const frameMetadata = await fdk.getFrameMetadata({
         post_url: `${process.env.BASE_URL}/redirect`,
         buttons: [
@@ -37,13 +37,14 @@ export async function POST(req: NextRequest, res: NextResponse) {
         aspect_ratio: "1:1",
         cid: "QmPGVGuJBWfbFSggnGEx6pehsGqXwxGYxxGkTTSwDxncJc",
       });
+  
       if (isValid) {
         await fdk.sendAnalytics("frame-mint-tutorial-mint", body);
       }
-
-      return {success: true, frameMetadata: frameMetadata}
-    } catch (error) {
-      console.log(error);
-      return NextResponse.json({ error: error });
+  
+      return NextResponse.json({ success: true, frameMetadata: frameMetadata });
+    } catch (error: any) {
+      console.error(error);
+      return NextResponse.json({ success: false, error: error.message });
     }
-}
+  }
